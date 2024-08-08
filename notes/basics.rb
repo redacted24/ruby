@@ -136,11 +136,69 @@ end
 
 ### Arrays
 
+# end of array manipulation
+new_array.new(3,5) # => [3,3,3,3,3]
+new_array.push(6)  # => [3,3,3,3,3,6]
+new_array << 7     # => [3,3,3,3,3,6,7]
+new_array.pop      # => returns 7
+
+# start of array manipulation
+# careful, unshift adds an element despite the prefix "un"!
+array_b.new(1,1)   # => [1]
+array.b.unshift(2) # => [2,1]
+array.b.shift      # => returns 2, as it is the element at the start of the array
+
+# concatenation
+b = [1,2,3] + [4,5,6]
+b == [1,2,3,4,5,6] # => true
+
+# array substraction (removing any elements that appear in the second array)
+b = [1,1,1,1,2,3]
+b -= [1,2]
+b == [3] # => true
+
 """
 Array.new(size, default value)
 array.first(upto)
 array.last(upto)
 """
+
+### Hashes
+# very similar to python dictionnaries
+
+hash = {}
+hash = {
+  'python' => 'yes'
+  9 => 'nine'
+}
+
+# getting these values:
+hash['python']
+
+# trying to get something that doesn't exist
+hash['pythonnnn'] # => nil
+
+# instead, you can try to return an error with .fetch (if it fails, returns error)
+hash.fetch('pythonnnn') # => nil
+
+# adding or modifying an entry
+hash['python'] = 'no' # modifying
+hash['crocodile'] = 'bird' # adding
+
+# deleting entries
+hash.delete('python') # => returns the deleted value
+
+# merging hashes
+hash2 = Hash.new()
+hash.merge(hash2) # deleting entries
+hash.delete('python') # => returns the deleted value
+
+# merging hashes
+hashash2 = Hash.new()
+hash.merge(hash2))
+
+# using symbols
+hash[:bruh] = 'bruh'
 
 ### Output
 
